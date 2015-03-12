@@ -12,8 +12,7 @@ int main()
     printf("Kacinci elemani bulmak istiyorsunuz\n");
     scanf("%d", &k);
  
- 	printf("Enter %d integers\n", size);
-  	srand(time(NULL));
+ 		srand(time(NULL));
   	printf("Dizinin ilk hali:\n");
   	for(i=0; i<size; i++) 
   	{
