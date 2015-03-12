@@ -1,0 +1,70 @@
+#include <stdio.h>
+ 
+int find_maximum(int[], int); 
+int find_minimum(int[], int);
+ 
+int main() 
+{
+  	int c, i, k, array[1000], size, location, maximum, minimum, bulunan;
+ 
+  	printf("Dizinin eleman sayisini giriniz\n");
+    scanf("%d", &size);
+    printf("Kacinci elemani bulmak istiyorsunuz\n");
+    scanf("%d", &k);
+ 
+ 	printf("Enter %d integers\n", size);
+  	srand(time(NULL));
+  	printf("Dizinin ilk hali:\n");
+  	for(i=0; i<size; i++) 
+  	{
+ 		array[i]=rand()%1001;
+ 		printf("%ld , ", array[i]);
+ 	
+  	}
+  printf("\n\n");
+ 
+  location = find_maximum(array, size);
+  maximum  = array[location];
+  printf("Maximum elemanin yeri = %d ve degeri = %d.\n", location + 1, maximum);
+   
+  location = find_minimum(array, size);
+  minimum  = array[location];
+  printf("Minimum elemanin yeri = %d ve degeri = %d.\n", location + 1, minimum);
+  
+  bulunan = array[k-1];
+  printf("Bulunan elemanin degeri = %d.\n", bulunan);
+  
+  return 0;
+}
+ 
+int find_maximum(int a[], int n)
+ {
+  int c, max, index;
+ 
+  max = a[0];
+  index = 0;
+ 
+  for (c = 1; c < n; c++) {
+    if (a[c] > max) {
+       index = c;
+       max = a[c];
+    }
+  }
+ 
+  return index;
+}
+int find_minimum(int a[], int n) {
+  int c, min, index;
+ 
+  min = a[0];
+  index = 0;
+ 
+  for (c = 1; c < n; c++) {
+    if (a[c] < min) {
+       index = c;
+       min = a[c];
+    }
+  }
+ 
+  return index;
+}
